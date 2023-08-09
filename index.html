@@ -1,0 +1,42 @@
+<html>
+	<head>
+	<title> Square App </title>
+	<style>
+		* { font-size:60px; }
+		body { background-color:beige; }
+	</style>
+	<script>
+		function find()
+		{
+			event.preventDefault();
+			let num = document.getElementById("num");
+			let ans = document.getElementById("ans");
+
+			if (num.value == "")
+			{
+				alert("Number is Empty");
+				ans.innerHTML = "";
+				num.focus();
+				return;
+			}
+
+			let n = parseFloat(num.value);
+			let r = n * n;
+			ans.innerHTML = "Square of Number is " + r.toFixed(2);
+		}
+	</script>
+	</head>
+
+	<body>
+		<center>
+			<h1> Square Finder </h1>
+			<form onsubmit = "find()">
+			<input type = "number" step = "any" placeholder = "Enter a Number" id = "num" />
+			<br><br>
+			<input type = "submit" value = "Find Square" />
+			</form>
+
+			<h2 id = "ans"> </h2> 
+		</center>
+	</body>
+</html>
